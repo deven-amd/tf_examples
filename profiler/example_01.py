@@ -2,6 +2,7 @@
 
 import os
 os.environ["HIP_VISIBLE_DEVICES"]="0"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 import tensorflow as tf
 from tensorflow.python.client import timeline
