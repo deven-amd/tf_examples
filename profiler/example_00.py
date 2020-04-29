@@ -2,7 +2,6 @@
 
 import os
 os.environ["HIP_VISIBLE_DEVICES"]="0"
-os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 import tensorflow as tf
 from tensorflow.python.client import timeline
@@ -21,7 +20,7 @@ with tf.compat.v1.Session() as sess:
     # Create the Timeline object, and write it to a json file
     fetched_timeline = timeline.Timeline(run_metadata.step_stats)
     chrome_trace = fetched_timeline.generate_chrome_trace_format()
-    with open('timeline_01.json', 'w') as f:
+    with open('timeline_00.json', 'w') as f:
         f.write(chrome_trace)
 
 print ("Done!")
